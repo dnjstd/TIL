@@ -30,4 +30,9 @@ sum = function (a: number, b: number) {
 };
 
 //인덱싱
-interface StringArray {}
+interface StringArray {
+  [index: number]: string;
+}
+
+var arr: StringArray = ["a", "b", "c"];
+arr[0]; //'a'
