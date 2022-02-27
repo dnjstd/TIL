@@ -50,3 +50,21 @@ var obj: StringRegexDictionary = {
 };
 
 // Object.keys(obj).forEach(function (value) {});
+
+//인터페이스 확장
+interface Person {
+  name: string;
+  age: number;
+}
+
+interface Developer extends Person {
+  // name: string;
+  // age: number; <- 삭제 가능
+  language: string;
+}
+
+var captain: Developer = {
+  language: "ts",
+  age: 100,
+  name: "캡틴",
+};
