@@ -5,5 +5,11 @@ enum Shoes {
   Adidas,
 }
 
+//문자형 이넘
+// enum Shoes {
+//   Nike = '나이키',
+//   Adidas = '아디다스',
+// }
+
 var myShoes = Shoes.Adidas;
-console.log(myShoes); //0
+console.log(myShoes); //숫자형 - 0 //문자형 - '아디다스'
