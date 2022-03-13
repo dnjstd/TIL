@@ -1,23 +1,25 @@
-import { useReducer } from "react";
+// import { useReducer } from "react";
+import useInputs from "./useInputs";
 
-function reducer(state, action) {
-  return {
-    ...state,
-    [action.name]: action.value,
-  };
-}
+// function reducer(state, action) {
+//   return {
+//     ...state,
+//     [action.name]: action.value,
+//   };
+// }
 
+//useInputs라는 커스텀 hooks 사용
 const InfoUseReducer = () => {
-  const [state, dispatch] = useReducer(reducer, {
+  const [state, onChange] = useInputs({
     name: "",
     nickname: "",
   });
 
   const { name, nickname } = state;
 
-  const onChange = (e) => {
-    dispatch(e.target);
-  };
+  // const onChange = (e) => {
+  //   dispatch(e.target);
+  // };
 
   return (
     <div>
