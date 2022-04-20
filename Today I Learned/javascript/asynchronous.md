@@ -46,16 +46,65 @@ Asynchronous JavaScript and XML의 약자.
 - ES6 이전에 비동기 프로그래밍을 할 때 사용된 방법이다.
 - 콜백지옥에 빠지면 들여쓰기 수준이 높아지며 가독성이 떨어진다. Promise나 Async/Await를 이용해 보완한다.
 
+<br/><br/>
+
 ## Promise의 개념
 
 - 비동기를 간편하게 처리할 수 있도록 도와주는 오브젝트이다.
 - 콜백 함수의 단점을 보완해 ES6에서 새로 나온 문법이다.
-- 성공(resolve), 실패(reject)
+- 성공(resolve), 실패(reject)를 return
+- new Promise의 인자인 콜백함수는 호출할 때 바로 실행, 내부에 resolve 또는 reject 함수를 호출하는 구분이 실행되기 전까지는 다음 then or catch 구문으로 넘어가지 않는다.
 
-## Promise의 상태
+### Promise의 상태
 
 new Promise()로 프로미스를 생성하고 종료될 때까지 3가지 상태를 갖는다.
 
 1. Pending(대기) : 비동기 처리 로직이 아직 완료되지 않은 상태
 2. Fulfilled(이행) : 비동기 처리가 완료되어 프로미스가 결과 값을 반환해준 상태
 3. Rejected(실패) : 비동기 처리가 실패하거나 오류가 발생한 상태
+
+### Promise 사용 예제 코드
+
+```
+function getData(){
+  return new Promise(function (resolve, reject){
+    $.get('url 주소/products/1', function(response){
+      if(response){
+        resolve(response);
+      }
+      reject(new Error('Request is failed'));
+    });
+  });
+}
+
+//Fulfilled 또는 Rejected의 결과 값 출력
+
+getData().then(function(data){
+  console.log(data); //response 값 출력
+}).catch(function(err){\
+console.log(err); //error출력
+})
+```
+
+<br/><br/>
+
+## async / await
+
+- 기존의 비동기 처리 방식인 콜백 함수와 Promise의 단점을 보완해서 나온 문법.
+- Promise 위에 조금 더 간편한 api를 제공한다.
+- 다수의 비동기 처리 작업을 할 때 유용하다.
+- try/catch를 이용해서 에러를 핸들링 한다.
+
+### async & await 사용 예제 코드
+
+```
+async function 함수명(){
+  await 비동기_처리_메서드_명();
+}
+```
+
+함수 내부 로직 중 HTTP 통신을 하는 비동기 처리 코드 앞에 `await`를 붙인다.
+! 주의해야할 점 ! : 비동기 처리 메서드가 꼭 Promise 객체를 반환해야 await가 의도대로 동작한다.
+
+<br/>
+일반적으로 await의 대상이 되는 비동기 처리 코드는 `Axios` 등 프로미스를 반환하는 API호출 함수이다.
