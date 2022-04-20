@@ -43,6 +43,7 @@ Asynchronous JavaScript and XML의 약자.
 ## 콜백함수의 개념
 
 - 다른함수의 인자로써 이용되는 함수이다.
+- 순차적으로 코드를 실행하고 싶을 때 사용한다.
 - ES6 이전에 비동기 프로그래밍을 할 때 사용된 방법이다.
 - 콜백지옥에 빠지면 들여쓰기 수준이 높아지며 가독성이 떨어진다. Promise나 Async/Await를 이용해 보완한다.
 
@@ -95,7 +96,7 @@ console.log(err); //error출력
 - 다수의 비동기 처리 작업을 할 때 유용하다.
 - try/catch를 이용해서 에러를 핸들링 한다.
 
-### async & await 사용 예제 코드
+### async / await 사용 예제 코드
 
 ```
 async function 함수명(){
@@ -107,4 +108,12 @@ async function 함수명(){
 ! 주의해야할 점 ! : 비동기 처리 메서드가 꼭 Promise 객체를 반환해야 await가 의도대로 동작한다.
 
 <br/>
-일반적으로 await의 대상이 되는 비동기 처리 코드는 `Axios` 등 프로미스를 반환하는 API호출 함수이다.
+일반적으로 await의 대상이 되는 비동기 처리 코드는 `axios`등 프로미스를 반환하는 API호출 함수이다.
+
+## async / await 와 Promise의 차이
+
+`에러 핸들링`
+
+- Promise는 .catch()문으로 에러 핸들링이 가능하다.
+- Async / await은 에러 핸들링 기능이 따로 없어 try/catch()문을 활용한다.
+- Promise는 .then()이 이어지는 then 지옥의 가능성이 있기 때문에, 코드가 길어질수록 async/await를 사용하는것이 가독성에 좋다.
