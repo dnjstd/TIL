@@ -1,8 +1,7 @@
-- [React Hook](#💡️-React-Hook)
-- [useMemo vs useCallback](#💡️-useMemo-vs-useCallback)
-- [memoization](<#💡️-memoization(메모이제이션)이란?>)
-- [useMemo](#💡️-useMemo)
-- [useCallback](#💡️-useCallback)
+- [React Hook](#💡️-react-hook)
+- [useMemo vs useCallback](#💡️-usememo-vs-usecallback)
+- [useMemo](#💡️-usememo)
+- [useCallback](#💡️-usecallback)
 
 # 💡️ React Hook
 
