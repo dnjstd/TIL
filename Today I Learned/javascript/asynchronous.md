@@ -108,11 +108,14 @@ async function 함수명(){
 ! 주의해야할 점 ! : 비동기 처리 메서드가 꼭 Promise 객체를 반환해야 await가 의도대로 동작한다.
 
 <br/>
+
 일반적으로 await의 대상이 되는 비동기 처리 코드는 `axios`등 프로미스를 반환하는 API호출 함수이다.
+
+<br/><br/>
 
 ## async / await 와 Promise의 차이
 
-`에러 핸들링`
+✔️ 에러 핸들링
 
 - Promise는 .catch()문으로 에러 핸들링이 가능하다.
 - Async / await은 에러 핸들링 기능이 따로 없어 try/catch()문을 활용한다.
