@@ -5,6 +5,7 @@ import reportWebVitals from "./reportWebVitals";
 import UseInputHook from "./useInput/UseInputHook";
 import UseTabsHook from "./useTabs/UseTabsHook";
 import UseTitleHook from "./useTitle/UseTitleHook";
+import UseClickHook from "./useClick/UseClickHook";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -12,6 +13,7 @@ root.render(
     <UseInputHook />
     <UseTabsHook />
     <UseTitleHook />
+    {/* <UseClickHook /> */}
   </React.StrictMode>
 );
 
