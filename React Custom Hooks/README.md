@@ -2,10 +2,10 @@
 - [x] useTabs
 - [x] useTitle
 - [x] useClick
+- [x] useHover
 - [ ] usePageLeave
 - [ ] useFadeIn
 - [ ] useFullScreen
-- [ ] useHover
 - [ ] useNetwork
 - [ ] useNotification
 - [ ] useScroll
